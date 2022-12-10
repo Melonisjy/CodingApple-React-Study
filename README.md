@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+## 2022 코딩애플 리액트 강의 정리
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 2강 정리
+원래 리액트에서 div 태그 만드는 법
+- React.createElement('div', null, 'Hello World")
+<br>
 
-## Available Scripts
+html에 변수를 넣고 싶을 땐(= 데이터바인딩) '{}'<br>
+ex)
+``` 
+let post = "강남 우동 맛집";
+...
+<h4>{ post }</h4>
+```
 
-In the project directory, you can run:
+style 넣을 땐 style={{style name: 'value'}}
 
-### `npm start`
+### 3강 정리
+return () 안에는 병렬로 2개 이상의 태그 금지<br>
+ex)
+```
+<div className="App"> //이런식의 2개 이상의 병렬 태그 금지
+</div>
+<div></div>
+```  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+state 만드는 법
+1. import { useState }
+2. useState(보관할 자료)
+3. let [작명1, 작명2] - 작명1: state에 보관했던 자료 / 작명2: state 변경을 도와주는 함수
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(참고)Destructuring 문법
+```
+let num = [1,2]; // <- array
 
-### `npm test`
+let a = num[0]; // 1을 뽑음.
+let c = num[1]; // 2를 뽑음.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+let [a, c] = [1,2]; // Destructuring 문법
+```
 
-### `npm run build`
+state 쓰는 이유
+- state를 쓰던 html은 자동으로 재렌더링됨.
+- 하지만 다 변수대신 state를 쓰기 보다는 자주 변경되는 사항에 대해서만 state를 쓰는 것이 좋다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3강 정리
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+warning message 끄는 법 <br>
+```
+/* eslint-disable */
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4강 정리
 
-### `npm run eject`
+### 5강 정리
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+(참고) array또는 object를 다룰 때는 원본은 보존하는 것이 좋다. <br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### state 동작 원리
+[state 변경함수의 특징] <br>
+기존 state == 신규 state 면 변경을 안해준다. <br>
+[array/object 특징] <br>
+array/object를 담은 변수에는 화살표만 저장이 된다. <br>
+[...변수] = ...은 괄호를 벗긴다는 의미. 새로 독립적인 array가 생성이 된다. <br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
